@@ -1,0 +1,37 @@
+spring:
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:jwt_test
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    hello.jwtstudy: debug
+
+jwt:
+  header: Authorization
+  secret: aGktbXktbmFtZS1pcy1raW1qZW9uZ21pbi1uaWNlLXRvLW1lZXQteW91LXRoaXMtY29kZS1pcy1zZWN1cml0eS1hbmQtand0LXN0dWR5LWdvLWdldC1oYXJkLXNlY3JldAo=
+  token-validity-in-seconds: 86400
+
+  #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
+  #echo 'hi-my-name-is-kimjeongmin-nice-to-meet-you-this-code-is-security-and-jwt-study-go-get-hard-secret'|base64
