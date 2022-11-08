@@ -2,7 +2,9 @@ package hello.jwtstudy.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import hello.jwtstudy.entity.User;
+import hello.jwtstudy.util.SecurityUtil;
 import lombok.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -29,17 +31,4 @@ public class UserDto {
     @Size(min = 3, max = 50)
     private String nickname;
 
-//    private Set<AuthorityDto> authorityDtoSet;
-//
-//    public static UserDto from(User user) {
-//        if (user == null) return null;
-//
-//        return UserDto.builder()
-//                .username(user.getUsername())
-//                .nickname(user.getNickname())
-//                .authorityDtoSet(user.getAuthorities().stream()
-//                        .map(authority -> AuthorityDto.builder().authorityName(authority.getAuthorityName()).build())
-//                        .collect(Collectors.toSet()))
-//                .build();
-//    }
 }

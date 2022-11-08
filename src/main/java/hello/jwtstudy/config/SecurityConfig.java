@@ -44,7 +44,7 @@ public class SecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer(){
         return (web) -> web.ignoring()
                 .antMatchers("/h2-console/**"
-                , "favicon.ico"
+                , "/favicon.ico"
                 , "/error");
     }
 
